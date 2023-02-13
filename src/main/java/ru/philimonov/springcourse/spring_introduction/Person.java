@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Autowired
-    @Qualifier(value = "dog")
     private Pet pet;
     private String surname;
     private int age;
@@ -26,6 +24,8 @@ public class Person {
         pet.say();
     }
 
+    @Autowired
+    @Qualifier(value = "dog")
     public void setPet(Pet pet) {
         System.out.println("Class Person set Pet!!!");
         this.pet = pet;
