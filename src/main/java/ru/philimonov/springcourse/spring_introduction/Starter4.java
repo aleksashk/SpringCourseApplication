@@ -8,6 +8,8 @@ public class Starter4 {
         try (context) {
             Dog dog1 = context.getBean("myPet", Dog.class);
             dog1.say();
+            Dog dog2 = context.getBean("myPet", Dog.class);
+            dog2.say();
         }
 
     }
