@@ -8,5 +8,8 @@
           class="ru.philimonov.springcourse.spring_introduction.Cat">
     </bean>
 
+    <bean id="myPerson"
+          class="ru.philimonov.springcourse.spring_introduction.Person">
+    </bean>
 
 </beans>
