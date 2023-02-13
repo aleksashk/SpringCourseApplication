@@ -14,18 +14,17 @@ public class Person {
 //        System.out.println("Create empty bean Person");
 //    }
 
-//    public Person(Pet pet) {
-//        System.out.println("Create empty bean Person");
-//        this.pet = pet;
-//    }
+    @Autowired
+    public Person(@Qualifier("dog") Pet pet) {
+        System.out.println("Create empty bean Person");
+        this.pet = pet;
+    }
 
     public void callYourPet() {
         System.out.println("Hey my pet!!!");
         pet.say();
     }
 
-    @Autowired
-    @Qualifier(value = "dog")
     public void setPet(Pet pet) {
         System.out.println("Class Person set Pet!!!");
         this.pet = pet;
