@@ -10,5 +10,7 @@ public class Starter3 {
         Pet myPet = context.getBean("myPet", Pet.class);
         Person person = new Person(myPet);
         person.callYourPet();
+
+        context.close();
     }
 }
