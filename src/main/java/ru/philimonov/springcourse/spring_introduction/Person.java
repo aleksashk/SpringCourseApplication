@@ -1,15 +1,25 @@
 package ru.philimonov.springcourse.spring_introduction;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
     private Pet pet;
     private String surname;
     private int age;
 
-    public Person() {
+//    public Person() {
+//        System.out.println("Create empty bean Person");
+//    }
+
+    @Autowired
+    public Person(Pet pet) {
         System.out.println("Create empty bean Person");
+        this.pet = pet;
     }
 
-    public void callYourPet(){
+    public void callYourPet() {
         System.out.println("Hey my pet!!!");
         pet.say();
     }
