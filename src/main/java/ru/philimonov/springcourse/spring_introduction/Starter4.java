@@ -11,6 +11,7 @@ public class Starter4 {
         System.out.println(dog1.getName());
         System.out.println(dog2.getName());
         dog1.setName("Name for pet1");
+        dog2.setName("PET2");
         System.out.println(dog1.getName());
         System.out.println(dog2.getName());
 
