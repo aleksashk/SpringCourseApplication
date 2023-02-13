@@ -6,7 +6,7 @@ public class ConfigWithAnnotations1 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
         try (context) {
-            Cat cat = context.getBean("catBean", Cat.class);
+            Cat cat = context.getBean("cat", Cat.class);
             cat.say();
         }
     }
