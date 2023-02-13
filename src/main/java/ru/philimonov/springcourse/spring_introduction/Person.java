@@ -2,12 +2,15 @@ package ru.philimonov.springcourse.spring_introduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
     private Pet pet;
+    @Value("Flameksandr")
     private String surname;
+    @Value("45")
     private int age;
 
 //    public Person() {
