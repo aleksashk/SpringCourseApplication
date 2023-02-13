@@ -6,7 +6,7 @@
     <context:property-placeholder location="classpath:myApp.properties"/>
 
     <bean id="myPet"
-          class="ru.philimonov.springcourse.spring_introduction.Cat"
+          class="ru.philimonov.springcourse.spring_introduction.Dog"
     scope="singleton">
     </bean>
 
