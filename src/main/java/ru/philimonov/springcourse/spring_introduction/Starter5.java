@@ -7,12 +7,12 @@ public class Starter5 {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
         try (context) {
-//            Person person = context.getBean("personBean", Person.class);
-//            person.callYourPet();
+            Person person = context.getBean("personBean", Person.class);
+            person.callYourPet();
 
-            Pet cat1 = context.getBean("catBean", Pet.class);
-            Pet cat2 = context.getBean("catBean", Pet.class);
-            System.out.println("cat1 = cat2 ->" + (cat1 == cat2));
+//            Pet cat1 = context.getBean("catBean", Pet.class);
+//            Pet cat2 = context.getBean("catBean", Pet.class);
+//            System.out.println("cat1 = cat2 ->" + (cat1 == cat2));
         }
 
     }
