@@ -6,6 +6,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan("ru.philimonov.springcourse.aop")
+@ComponentScan("ru.philimonov.springcourse")
 public class MyConfig {
 }
