@@ -1,10 +1,7 @@
 package ru.philimonov.springcourse.spring_introduction;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-@Component("personBean")
+//
+//@Component("personBean")
 public class Person {
     private Pet pet;
     //    @Value("${person.surname}")
@@ -16,9 +13,13 @@ public class Person {
 //        System.out.println("Create empty bean Person");
 //    }
 
-    @Autowired
-    public Person(@Qualifier("dog") Pet pet) {
-        System.out.println("Create empty bean Person");
+//    @Autowired
+//    public Person(@Qualifier("dog") Pet pet) {
+//        System.out.println("Create empty bean Person");
+//        this.pet = pet;
+//    }
+
+    public Person(Pet pet) {
         this.pet = pet;
     }
 
