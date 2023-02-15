@@ -6,7 +6,9 @@ public class Starter1 {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
-        Library library = context.getBean("libraryBean", Library.class);
-        library.getBook();
+        try (context) {
+            Library library = context.getBean("libraryBean", Library.class);
+            library.getBook();
+        }
     }
 }
