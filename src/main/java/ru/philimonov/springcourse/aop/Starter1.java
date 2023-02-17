@@ -9,7 +9,7 @@ public class Starter1 {
         try (context) {
             UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
             Book book = context.getBean("book", Book.class);
-            uniLibrary.getBook(book);
+            uniLibrary.getBook(book, true);
 //            uniLibrary.returnBook("Flameksandr", 32);
 //            uniLibrary.getMagazine();
 //            uniLibrary.getMagazine(12, "String b", .25, 4, true);
