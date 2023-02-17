@@ -10,7 +10,7 @@ public class Starter1 {
             UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
             uniLibrary.getBook("TicTacToe");
 //            uniLibrary.returnBook("Flameksandr", 32);
-//            uniLibrary.getMagazine();
+            uniLibrary.getMagazine(123);
 //            SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
 //            schoolLibrary.getBook();
         }
