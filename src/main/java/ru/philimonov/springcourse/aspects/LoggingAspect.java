@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+import ru.philimonov.springcourse.aop.Book;
 
 @Component
 @Aspect
@@ -18,6 +19,21 @@ public class LoggingAspect {
         System.out.println("methodSignature.getMethod() = " + methodSignature.getMethod());
         System.out.println("methodSignature.getReturnType() = " + methodSignature.getReturnType());
         System.out.println("methodSignature.getName() = " + methodSignature.getName());
+
+        if (methodSignature.getName().equals("addBook")) {
+            Object[] args = joinPoint.getArgs();
+
+            for (Object obj : args) {
+                if (obj instanceof Book) {
+                    Book myBook = (Book) obj;
+                    System.out.println("Information about the book: title - " +
+                            myBook.getName() + ", author - " + myBook.getAuthor() +
+                            ", year of publication - " + myBook.getYearOfPublication());
+                } else if (obj instanceof String) {
+                    System.out.println("THe " + obj + " adding the book at to the library ");
+                }
+            }
+        }
 
         System.out.println("beforeGetLoggingAdvice: логирование попытки получить книгу/журнал");
         System.out.println("---------------------------------------------");
