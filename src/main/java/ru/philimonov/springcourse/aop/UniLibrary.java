@@ -3,18 +3,18 @@ package ru.philimonov.springcourse.aop;
 import org.springframework.stereotype.Component;
 
 @Component("uniLibrary")
-public class UniLibrary extends AbstractLibrary{
+public class UniLibrary extends AbstractLibrary {
 
-    @Override
-    public void getBook(){
-        System.out.println("We take the book from uniLibrary!!!");
+    public void getBook(String bookName) {
+        System.out.println("We take the book from uniLibrary " + bookName);
     }
 
-    protected String returnBook(String name, int counter){
+    protected String returnBook(String name, int counter) {
         System.out.println("We return the book from uniLibrary!!!");
         return "Some String";
     }
-    public void getMagazine(){
+
+    public void getMagazine() {
         System.out.println("We take the magazine from uniLibrary!!!");
     }
 }

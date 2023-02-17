@@ -8,11 +8,11 @@ public class Starter1 {
 
         try (context) {
             UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
-            uniLibrary.getBook();
-            uniLibrary.returnBook("Flameksandr", 32);
-            uniLibrary.getMagazine();
-            SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
-            schoolLibrary.getBook();
+            uniLibrary.getBook("TicTacToe");
+//            uniLibrary.returnBook("Flameksandr", 32);
+//            uniLibrary.getMagazine();
+//            SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
+//            schoolLibrary.getBook();
         }
     }
 }
