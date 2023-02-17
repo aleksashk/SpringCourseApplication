@@ -9,21 +9,34 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAndSecurityAspect {
 
-    @Pointcut("execution(* ru.philimonov.springcourse.aop.UniLibrary.*(..))")
-    private void allMethodsFromUniLibrary(){
+
+    @Pointcut("execution(* get*())")
+    private void allGetMethods(){}
+
+    @Before("allGetMethods()")
+    public void beforeGetLoggingAdvice(){
+        System.out.println("beforeGetLoggingAdvice: логирование попытки получить книгу/журнал");
     }
 
-    @Pointcut("execution(public void ru.philimonov.springcourse.aop.UniLibrary.returnMagazine())")
-    private void returnMagazineFromUniLibrary(){
+    @Before("allGetMethods()")
+    public void beforeGetSecurityAdvice(){
+        System.out.println("beforeGetSecurityAdvice: проверка прав на получениу книги/журнала");
     }
-
-    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
-    private void allMethodsExceptReturnMagazineFromUniLibrary(){
-    }
-
-    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
-    public void beforeAllMethodsExceptReturnMagazineAdvice(){
-        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #10");
-    }
+//    @Pointcut("execution(* ru.philimonov.springcourse.aop.UniLibrary.*(..))")
+//    private void allMethodsFromUniLibrary(){
+//    }
+//
+//    @Pointcut("execution(public void ru.philimonov.springcourse.aop.UniLibrary.returnMagazine())")
+//    private void returnMagazineFromUniLibrary(){
+//    }
+//
+//    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
+//    private void allMethodsExceptReturnMagazineFromUniLibrary(){
+//    }
+//
+//    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
+//    public void beforeAllMethodsExceptReturnMagazineAdvice(){
+//        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #10");
+//    }
 
 }

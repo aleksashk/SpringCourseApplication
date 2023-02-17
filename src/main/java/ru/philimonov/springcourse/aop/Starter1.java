@@ -9,8 +9,9 @@ public class Starter1 {
         try (context) {
             UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
             uniLibrary.getBook();
-            uniLibrary.returnMagazine();
-            uniLibrary.addBook();
+            uniLibrary.getMagazine();
+//            uniLibrary.returnMagazine();
+//            uniLibrary.addBook();
         }
     }
 }
