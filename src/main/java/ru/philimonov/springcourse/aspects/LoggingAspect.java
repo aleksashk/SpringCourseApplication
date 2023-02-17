@@ -2,26 +2,22 @@ package ru.philimonov.springcourse.aspects;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+@Order(1)
+public class LoggingAspect {
 
 
-    @Pointcut("execution(* get*())")
-    private void allGetMethods(){}
 
-    @Before("allGetMethods()")
+    @Before("ru.philimonov.springcourse.aspects.MyPointCuts.allGetMethods()")
     public void beforeGetLoggingAdvice(){
         System.out.println("beforeGetLoggingAdvice: логирование попытки получить книгу/журнал");
     }
 
-    @Before("allGetMethods()")
-    public void beforeGetSecurityAdvice(){
-        System.out.println("beforeGetSecurityAdvice: проверка прав на получениу книги/журнала");
-    }
+
 //    @Pointcut("execution(* ru.philimonov.springcourse.aop.UniLibrary.*(..))")
 //    private void allMethodsFromUniLibrary(){
 //    }
