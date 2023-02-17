@@ -14,7 +14,10 @@ public class UniLibrary extends AbstractLibrary {
         return "Some String";
     }
 
-    public void getMagazine(int a) {
+    public void getMagazine() {
+        System.out.println("We take the magazine from uniLibrary!!!");
+    }
+    public void getMagazine(int a, String b, Double c, Object o, Boolean bool) {
         System.out.println("We take the magazine from uniLibrary!!!");
     }
 }
