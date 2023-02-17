@@ -10,7 +10,7 @@ public class UniLibrary extends AbstractLibrary{
         System.out.println("We take the book from uniLibrary!!!");
     }
 
-    protected String returnBook(){
+    protected String returnBook(String name, int counter){
         System.out.println("We return the book from uniLibrary!!!");
         return "Some String";
     }

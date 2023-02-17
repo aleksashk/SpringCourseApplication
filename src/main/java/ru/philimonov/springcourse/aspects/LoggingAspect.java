@@ -13,8 +13,8 @@ public class LoggingAspect {
         System.out.println("beforeGetBookAdvice: попытка получить книгу!!!");
     }
 
-    @Before("execution(public * returnBook())")
+    @Before("execution(String returnBook(String, int))")
     public void beforeReturnBookAdvice() {
-        System.out.println("beforeReturnBookAdvice: попытка return книгу!!!");
+        System.out.println("------------------------------");
     }
 }
