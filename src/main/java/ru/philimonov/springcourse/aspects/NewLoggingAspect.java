@@ -17,7 +17,7 @@ public class NewLoggingAspect {
             targetMethodResult = proceedingJoinPoint.proceed();
         } catch (Throwable e) {
             System.out.println("Выброшено исключение " + e);
-            targetMethodResult = "Unknown book's title!";
+            throw e;
         }
 
         System.out.println("aroundReturnBookLoggingAdvice: В библиотеку успешно вернули книгу");
