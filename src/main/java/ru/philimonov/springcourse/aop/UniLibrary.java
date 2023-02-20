@@ -23,6 +23,7 @@ public class UniLibrary extends AbstractLibrary {
     }
 
     public String returnBook() {
+        System.out.println(10 / 0);
         System.out.println("We return the book from uniLibrary!!!");
         return "Some book's title!";
     }

@@ -14,8 +14,6 @@ public class NewLoggingAspect {
 
         Object targetMethodResult = proceedingJoinPoint.proceed();
 
-        targetMethodResult = "New changed book's title!!!";
-
         System.out.println("aroundReturnBookLoggingAdvice: В библиотеку успешно вернули книгу");
         return targetMethodResult;
     }
